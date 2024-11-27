@@ -1,0 +1,16 @@
+[Unit]
+Description=Flask File Server
+After=network.target
+
+[Service]
+Type=simple
+User=liuf
+Group=liuf
+WorkingDirectory=/home/liuf/web_file
+Environment="PATH=/home/liuf/miniconda3/bin"
+ExecStart=/home/liuf/miniconda3/bin/python /home/liuf/web_file/file_server.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target 

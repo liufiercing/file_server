@@ -11,7 +11,11 @@
 - 🎯 简洁美观的界面
 - 🛡️ 基本的安全保护
 
-## 安装依赖 
+## 安装依赖
+
+```bash
+pip install flask
+```
 
 ## 使用方法
 
@@ -30,6 +34,49 @@
    - API 接口：
      - 获取文件列表：`GET http://your-server:8088/api/files`
      - 下载文件：`GET http://your-server:8088/api/download/path/to/file`
+
+## 系统服务配置
+
+### 1. 创建服务文件
+将 `file_server.service` 复制到系统目录：
+```bash
+sudo cp file_server.service /etc/systemd/system/
+```
+
+### 2. 服务管理命令
+```bash
+# 重新加载服务配置
+sudo systemctl daemon-reload
+
+# 启动服务
+sudo systemctl start file_server
+
+# 停止服务
+sudo systemctl stop file_server
+
+# 重启服务
+sudo systemctl restart file_server
+
+# 查看服务状态
+sudo systemctl status file_server
+
+# 设置开机自启
+sudo systemctl enable file_server
+
+# 禁用开机自启
+sudo systemctl disable file_server
+
+# 查看服务日志
+sudo journalctl -u file_server -f
+```
+
+### 3. 服务配置说明
+服务配置文件 `file_server.service` 包含：
+- 服务描述和依赖
+- 运行用户和组设置
+- 工作目录配置
+- Python 环境路径
+- 自动重启设置
 
 ## 安全说明
 
@@ -61,6 +108,7 @@
 2. 调试模式默认开启
 3. 支持所有文件类型的下载
 4. 自动过滤非共享目录的访问
+5. 确保服务运行用户有足够的文件访问权限
 
 ## 开发环境
 
