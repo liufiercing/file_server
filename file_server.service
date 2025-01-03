@@ -6,9 +6,8 @@ After=network.target
 Type=simple
 User=liuf
 Group=liuf
-WorkingDirectory=/home/liuf/web_file
-Environment="PATH=/home/liuf/miniconda3/bin"
-ExecStart=/home/liuf/miniconda3/bin/python /home/liuf/web_file/file_server.py
+WorkingDirectory=/home/liuf/server/file_server
+ExecStart=/home/liuf/anaconda3/bin/python /home/liuf/server/file_server/file_server.py
 Restart=always
 RestartSec=3
 

@@ -8,6 +8,14 @@
 - 📥 文件下载
 - 🔍 目录导航
 - 📊 文件信息显示（大小、修改时间）
+- 🎯️ 图片文件预览
+  - 支持常见图片格式（JPG、PNG、GIF等）
+  - 图片预览窗口
+  - 图片切换功能（左右切换、键盘控制）
+- 📝 代码文件预览
+  - 语法高亮显示
+  - 代码复制功能
+  - 支持多种编程语言
 - 🎯 简洁美观的界面
 - 🛡️ 基本的安全保护
 
@@ -30,10 +38,30 @@ pip install flask
    ```
 
 3. 访问服务：
-   - Web 界面：`http://your-server:8088`
+   - Web 界面：`http://your-server:8089`
    - API 接口：
-     - 获取文件列表：`GET http://your-server:8088/api/files`
-     - 下载文件：`GET http://your-server:8088/api/download/path/to/file`
+     - 获取文件列表：`GET http://your-server:8089/api/files`
+     - 下载文件：`GET http://your-server:8089/api/download/path/to/file`
+
+## 预览功能
+
+### 图片预览
+- 支持格式：JPG、JPEG、PNG、GIF、BMP、WEBP
+- 功能特点：
+  - 点击预览按钮打开图片
+  - 左右箭头切换图片
+  - 键盘方向键控制
+  - 显示图片信息（名称、大小、修改时间）
+  - ESC键关闭预览
+
+### 代码预览
+- 支持多种编程语言和文本文件
+- 功能特点：
+  - 语法高亮显示
+  - 一键复制代码
+  - 复制成功提示
+  - 支持长代码滚动
+  - ESC键关闭预览
 
 ## 系统服务配置
 
@@ -99,12 +127,15 @@ sudo journalctl -u file_server -f
 - 文件大小显示
 - 修改时间显示
 - 目录层级导航
+- 文件预览功能
+  - 图片预览
+  - 代码预览
 - 文件下载按钮
 - 响应式设计
 
 ## 注意事项
 
-1. 默认端口为 8088
+1. 默认端口为 8089
 2. 调试模式默认开启
 3. 支持所有文件类型的下载
 4. 自动过滤非共享目录的访问
@@ -115,6 +146,7 @@ sudo journalctl -u file_server -f
 - Python 3.x
 - Flask
 - Font Awesome（用于图标显示）
+- highlight.js（用于代码高亮）
 
 ## 许可证
 
